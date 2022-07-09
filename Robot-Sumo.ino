@@ -1,17 +1,20 @@
 #include <AFMotor.h>
-//Pines arduino a utilizar 
+//Pines arduino a utilizar
 AF_DCMotor MotorIz(1);
 AF_DCMotor MotorDer(2); 
 #define boton 2
 #define SensorDelantero A1
-int LecturaDelantero = 0;
 #define SensorTrasero A0
+#define Trigger 10
+#define Echo 9
+// Constantes 
+int LecturaDelantero = 0;
 int LecturaTrasero = 0;
-
 int VelocidadSalRing = 200;
 int VelocidadAtaque = 250;
 int VelocidadBusqueda = 150;
 int TiempoRegresarAlRing = 1000;
+int TiempoAtaque = 100;
 int Delantero = 0;
 int Trasero = 0;
  
@@ -20,6 +23,8 @@ void setup() {
     pinMode(boton,INPUT);
     pinMode(SensorDelantero, INPUT);
     pinMode(SensorTrasero, INPUT);
+    pinMode(Trigger, OUTPUT); //Pin como salida emite sonido ultrasonico 
+    pinMode(Echo, INPUT); //Pin como entrada recibe el echo
     MotorIz.setSpeed(VelocidadAtaque);
     MotorDer.setSpeed(VelocidadAtaque);
 
@@ -38,6 +43,8 @@ void setup() {
 
 void loop() {
   
+    int Distancia_oponente  = Detecta_Oponente(); 
+
     //lECTURA DE LOS SENSORES DE PISO
     LecturaDelantero = digitalRead(SensorDelantero);
     LecturaTrasero = digitalRead(SensorTrasero);
@@ -58,27 +65,48 @@ void loop() {
         Trasero = 1;
     }
 
-    // DETECTA FINAL DEL RING Sensor Delantero
+    // Si detecta un oponente 
+    if(Distancia_oponente <= 20 && Delantero == 0 && Trasero == 0){
+        Adelante(VelocidadAtaque, TiempoAtaque);
+    }
+
+    // No detectra oponente 
+    if(Distancia_oponente >= 21 && Delantero == 0 && Trasero == 0){
+        //Estrategia si no detecta oponenete 
+        GiroDerecha(VelocidadBusqueda);
+    }
+
+    // DETECTA FINAL DEL RING Sensor Delantero Motores giren hacia atras
     if(Delantero == 1){
         Atras(VelocidadSalRing, TiempoRegresarAlRing);
     }
 
+    // DETECTA FINAL DEL RING Sensor Trasero Motores giren hacia delante 
     if (Trasero == 1)
     {
         Adelante(VelocidadSalRing, TiempoRegresarAlRing);
     }
     
-
 }
 
-
+// Función que detecta la distancia del oponente y devuelve la distancia 
+int Detecta_Oponente(){
+    int duracion,distancia;
+    digitalWrite(Trigger, HIGH); //Genera el pulso de trigger
+    delayMicroseconds(10); //Enviamos el pulso durante 10us
+    digitalWrite(Trigger, LOW);
+    duracion = pulseIn(Echo, HIGH); //Lee el tiempo del ECHO pulsoIn(función para medir los pulsos) pulseIn(pin, value)
+    distancia = (duracion/2) / 29; //Calcula la distancia en centimetros
+    delay(5);
+    return distancia;
+}
 
 void Detener(){
     MotorIz.run(RELEASE);
     MotorDer.run(RELEASE); 
 }
 
-void Adelante (int vel, int tim){
+void Adelante(int vel, int tim){
     MotorDer.setSpeed(vel);
     MotorIz.setSpeed(vel);
     MotorIz.run(FORWARD);
@@ -99,7 +127,9 @@ void GiroIzquierda(){
     MotorDer.run(FORWARD);
 }
 
-void GiroDerecha(){
+void GiroDerecha(int vel){
+    MotorDer.setSpeed(vel);
+    MotorIz.setSpeed(vel);
     MotorIz.run(FORWARD);
     MotorDer.run(BACKWARD);
 }
