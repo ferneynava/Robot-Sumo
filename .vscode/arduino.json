@@ -1,0 +1,5 @@
+{
+    "sketch": "Robot-Sumo.ino",
+    "output": "build",
+    "board": "arduino:avr:uno"
+}

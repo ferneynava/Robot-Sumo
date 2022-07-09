@@ -1,0 +1,27 @@
+[
+  {
+    "Sourcefile": null,
+    "Include": "",
+    "Includepath": "C:\\Program Files (x86)\\Arduino\\hardware\\arduino\\avr\\cores\\arduino"
+  },
+  {
+    "Sourcefile": null,
+    "Include": "",
+    "Includepath": "C:\\Program Files (x86)\\Arduino\\hardware\\arduino\\avr\\variants\\standard"
+  },
+  {
+    "Sourcefile": "d:\\Material Arduino y Scratch\\Proyectos code Arduino\\Robot sumo\\Robot-Sumo\\build\\sketch\\Robot-Sumo.ino.cpp",
+    "Include": "AFMotor.h",
+    "Includepath": "C:\\Program Files (x86)\\Arduino\\libraries\\Adafruit_Motor_Shield_library"
+  },
+  {
+    "Sourcefile": "d:\\Material Arduino y Scratch\\Proyectos code Arduino\\Robot sumo\\Robot-Sumo\\build\\sketch\\Robot-Sumo.ino.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Program Files (x86)\\Arduino\\libraries\\Adafruit_Motor_Shield_library\\AFMotor.cpp",
+    "Include": "",
+    "Includepath": null
+  }
+]
