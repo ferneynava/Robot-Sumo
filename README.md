@@ -64,7 +64,7 @@
 <!-- ABOUT THE PROJECT -->
 ## Sobre el proyecto
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Product Name Screen Shot][product-screenshot]](https://github.com/ferneynava/Robot-Sumo)
 
 Robot movil utilizado en combates, en donde dos robots tratan de empujarse el uno al otro afuerda del circuito del combate. Los componentes utilizados para este proyecto fueron Arduino uno, Sensor ultrasonido HC-SR04, Sensor infrarrojo TCRT5000L, Shield Motor Drive L293D entre otros. 
 <p align="right">(<a href="#top">volver arriba</a>)</p>
@@ -167,18 +167,18 @@ Project Link: [https://github.com/ferneynava/Robot-Sumo](https://github.com/fern
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://github.com/ferneynava/Robot-Sumo.git?style=for-the-badge
+[contributors-shield]:  https://img.shields.io/github/contributors/ferneynava/Robot-Sumo.svg?style=for-the-badge
 [contributors-url]: https://github.com/ferneynava/Robot-Sumo/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
+[forks-shield]: https://img.shields.io/github/forks/ferneynava/Robot-Sumo.svg?style=for-the-badge
 [forks-url]: https://github.com/ferneynava/Robot-Sumo/network/members
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
+[stars-shield]: https://img.shields.io/github/stars/ferneynava/Robot-Sumo.svg?style=for-the-badge
 [stars-url]: https://github.com/ferneynava/Robot-Sumo/stargazers
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
+[issues-shield]: https://img.shields.io/github/issues/ferneynava/Robot-Sumo.svg?style=for-the-badge
 [issues-url]: https://github.com/ferneynava/Robot-Sumo/issues
-[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
+[license-shield]: https://img.shields.io/github/license/ferneynava/Robot-Sumo.svg?style=for-the-badge
 [license-url]: https://github.com/ferneynava/Robot-Sumo/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/ferney-alexander-nava-trujillo-0478a8118/
-[product-screenshot]: images/screenshot.png
+[product-screenshot]: ./images/Plano%20Robot%20Sumo%20.png
 [Arduino.ino]: https://img.shields.io/badge/Arduino_IDE-00979D?style=for-the-badge&logo=arduino&logoColor=white
 [Arduino-url]: https://www.arduino.cc/
