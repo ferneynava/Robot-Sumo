@@ -14,7 +14,15 @@ void setup();
 #line 29 "d:\\Material Arduino y Scratch\\Proyectos code Arduino\\Robot sumo\\Robot-Sumo\\Robot-Sumo.ino"
 void loop();
 #line 34 "d:\\Material Arduino y Scratch\\Proyectos code Arduino\\Robot sumo\\Robot-Sumo\\Robot-Sumo.ino"
-void DetenerMot();
+void Detener();
+#line 39 "d:\\Material Arduino y Scratch\\Proyectos code Arduino\\Robot sumo\\Robot-Sumo\\Robot-Sumo.ino"
+void Adelante();
+#line 44 "d:\\Material Arduino y Scratch\\Proyectos code Arduino\\Robot sumo\\Robot-Sumo\\Robot-Sumo.ino"
+void Atras();
+#line 49 "d:\\Material Arduino y Scratch\\Proyectos code Arduino\\Robot sumo\\Robot-Sumo\\Robot-Sumo.ino"
+void GiroIzquierda();
+#line 54 "d:\\Material Arduino y Scratch\\Proyectos code Arduino\\Robot sumo\\Robot-Sumo\\Robot-Sumo.ino"
+void GiroDerecha();
 #line 10 "d:\\Material Arduino y Scratch\\Proyectos code Arduino\\Robot sumo\\Robot-Sumo\\Robot-Sumo.ino"
 void setup() { 
   // put your setup code here, to run once:
@@ -22,7 +30,7 @@ void setup() {
     MotorIz.setSpeed(VelocidadAtaque);
     MotorDer.setSpeed(VelocidadAtaque);
 
-    DetenerMot(); 
+    Detener(); 
 
     //Bloque para indicar que fue presionado el boton inicio de la competencia 5 segundos de seguridad
     while (true)
@@ -40,8 +48,27 @@ void loop() {
 
 }
 
-void DetenerMot(){
+void Detener(){
     MotorIz.run(RELEASE);
     MotorDer.run(RELEASE); 
 }
 
+void Adelante (){
+    MotorIz.run(FORWARD);
+    MotorDer.run(FORWARD);
+}
+
+void Atras(){
+    MotorIz.run(BACKWARD);
+    MotorDer.run(BACKWARD);
+}
+
+void GiroIzquierda(){
+    MotorIz.run(BACKWARD);
+    MotorDer.run(FORWARD);
+}
+
+void GiroDerecha(){
+    MotorIz.run(FORWARD);
+    MotorDer.run(BACKWARD);
+}

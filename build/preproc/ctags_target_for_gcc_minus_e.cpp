@@ -14,7 +14,7 @@ void setup() {
     MotorIz.setSpeed(VelocidadAtaque);
     MotorDer.setSpeed(VelocidadAtaque);
 
-    DetenerMot();
+    Detener();
 
     //Bloque para indicar que fue presionado el boton inicio de la competencia 5 segundos de seguridad
     while (true)
@@ -32,7 +32,27 @@ void loop() {
 
 }
 
-void DetenerMot(){
+void Detener(){
     MotorIz.run(4);
     MotorDer.run(4);
+}
+
+void Adelante (){
+    MotorIz.run(1);
+    MotorDer.run(1);
+}
+
+void Atras(){
+    MotorIz.run(2);
+    MotorDer.run(2);
+}
+
+void GiroIzquierda(){
+    MotorIz.run(2);
+    MotorDer.run(1);
+}
+
+void GiroDerecha(){
+    MotorIz.run(1);
+    MotorDer.run(2);
 }
