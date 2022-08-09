@@ -19,7 +19,7 @@
   <h3 align="center">Robot Sumo</h3>
 
   <p align="center">
-    Robot Sumo para competencias 
+    Robot Sumo para competencias. 
     <br />
     <a href="https://github.com/ferneynava/Robot-Sumo"><strong>Explore los doocumentos »</strong></a>
     <br />
